@@ -22,6 +22,11 @@
         font-size: 3rem;
       }
     }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-20px);}
+      60% {transform: translateY(-15px);}
+    }
 
     .nav {
       width: 350px;
@@ -36,8 +41,7 @@
       
       a {
         font-size: 1.6rem;
-        color: red;
-        // color: @font-color;
+        color: @font-color;
         text-decoration: none;
       }
     }
