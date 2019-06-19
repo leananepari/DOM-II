@@ -4,7 +4,11 @@
 let logo = document.querySelector('.logo-heading');
 logo.addEventListener('mouseover', (event) => {
   event.preventDefault();
-  event.target.style.animation = 'bounce 2s';
+  event.target.style.animation = 'bounce 1s';
+})
+logo.addEventListener('mouseout', (event) => {
+  event.preventDefault();
+  logo.removeAttribute('style');
 })
 
 // KEYDOWN
