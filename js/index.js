@@ -58,7 +58,7 @@ img.addEventListener('load', (event) => {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     console.log('Latitude ', latitude, 'Longitude ', longitude);
-    // address(latitude, longitude);
+    address(latitude, longitude);
   },))
 
   var geocoder;
@@ -83,7 +83,6 @@ img.addEventListener('load', (event) => {
 
 // FOCUS
 let elems = document.querySelector('.nav')
-console.log(elems.children)
 elems.addEventListener('click', (event) => {
   event.preventDefault();
   let i = 0;
