@@ -132,3 +132,15 @@ bus.addEventListener('dblclick', (event) => {
       bus.style.transform = 'scale(1)';
     })
 })
+
+// stopPropagation()
+let box = document.querySelector('.text-content');
+let title = document.querySelector('.text-content h2');
+box.addEventListener('click', (event) => {
+  event.preventDefault();
+  alert('Parent is clicked!');
+})
+title.addEventListener('click', (event) => {
+  event.stopPropagation();
+  alert('Child is clicked!')
+})
