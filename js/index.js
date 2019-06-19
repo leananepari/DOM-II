@@ -8,7 +8,8 @@ logo.addEventListener('mouseover', (event) => {
 })
 
 // KEYDOWN
-window.addEventListener('keydown', function(e) {
+window.addEventListener('keydown', function(event) {
+  event.preventDefault();
   let min = 10;
   let max = 90;
   let colors = ['blue', 'yellow', 'orange', 'seagreen'];
@@ -74,4 +75,60 @@ img.addEventListener('load', (event) => {
         }
       });
   }
+})
+
+// FOCUS
+let elems = document.querySelector('.nav')
+console.log(elems.children)
+elems.addEventListener('click', (event) => {
+  event.preventDefault();
+  let i = 0;
+  let colors = ['blue', 'yellow', 'orange', 'seagreen'];
+  function loop() {
+    setTimeout(function() {
+      if (i < elems.children.length) {
+        elems.children[i].style.color = colors[Math.floor(Math.random()*colors.length)];
+        i++;
+        loop();
+      }
+    }, 100)
+  }
+  loop()
+})
+
+// RESIZE 
+window.addEventListener('resize', (event) => {
+  event.preventDefault();
+  alert('Window is resized!')
+})
+
+// SCROLL
+let body = document.querySelector('body');
+window.addEventListener('scroll', (event) => {
+  event.preventDefault();
+  body.style.color = 'seagreen'
+})
+
+// SELECT
+let textArea = document.createElement('textarea');
+document.querySelector('.intro').appendChild(textArea);
+let textFiled = document.createTextNode('Select me!');
+textArea.appendChild(textFiled);
+
+textArea.addEventListener('select', (event) => {
+  event.preventDefault();
+  textArea.setAttribute('style', 'background-color: blue')
+  textArea.style.backgroundColor = 'lightblue';
+})
+
+// DBLCLICK
+let bus = document.querySelector('.intro img');
+
+bus.addEventListener('dblclick', (event) => {
+  event.preventDefault();
+  bus.style.transform = 'scale(1.3)';
+    bus.addEventListener('click', (event) => {
+      event.preventDefault();
+      bus.style.transform = 'scale(1)';
+    })
 })
